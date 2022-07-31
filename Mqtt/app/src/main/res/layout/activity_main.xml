@@ -1,0 +1,732 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#F7F7F7"
+        tools:context=".MainActivity">
+
+        <ProgressBar
+            android:id="@+id/pb_thingsboard"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <WebView
+            android:id="@+id/wb_thingsboard"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginEnd="0dp"
+            android:layout_marginBottom="0dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <!-- HELLO NAME SYMBOL -->
+        <TextView
+            android:id="@+id/tv_main_activity_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="8dp"
+            android:text="@string/tv_main_activity_hello"
+            android:textSize="24sp"
+            android:textStyle="normal"
+            android:textColor="#3A3635"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/tv_main_activity_user_name"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/tv_main_activity_user_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tv_main_activity_user_name"
+            android:textColor="#393335"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_main_activity_title"
+            app:layout_constraintEnd_toStartOf="@+id/tv_main_activity_symbol"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/tv_main_activity_title"
+            app:layout_constraintTop_toTopOf="@+id/tv_main_activity_title" />
+
+        <TextView
+            android:id="@+id/tv_main_activity_symbol"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="24dp"
+            android:text="@string/tv_main_activity_symbol"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="#393335"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_main_activity_user_name"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/tv_main_activity_user_name"
+            app:layout_constraintTop_toTopOf="@+id/tv_main_activity_user_name" />
+
+        <!-- TEXT WELCOME -->
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/tv_main_activity_welcome"
+            android:textColor="#4C4C4C"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/tv_main_activity_title"
+            app:layout_constraintTop_toBottomOf="@+id/tv_main_activity_title"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <!-- IMAGE WEATHER -->
+        <ImageView
+            android:id="@+id/iv_main_activity_weather"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="24dp"
+            android:contentDescription="@string/iv_main_activity_weather"
+            android:minWidth="190dp"
+            android:minHeight="190dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/gl_horizontal"
+            app:layout_constraintEnd_toStartOf="@+id/gl_vertical"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView"
+            app:layout_constraintVertical_bias="0.0"
+            app:srcCompat="@drawable/nube" />
+
+        <!-- GUIDELINE VERTICAL -->
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl_vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5" />
+        <!-- GUIDELINE HORIZONTAL -->
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl_horizontal_25"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.25" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.5" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl_horizontal_75"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.75" />
+
+        <!-- Switch TEXT Turn On/Off -->
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/sv_main_activity_weather_title"
+            android:textSize="14sp"
+            android:textStyle="normal"
+            android:textColor="#4C4C4C"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/sv_main_activity_weather_switch"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/gl_vertical"
+            app:layout_constraintTop_toTopOf="@+id/iv_main_activity_weather"
+            app:layout_constraintVertical_bias="0.0"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <!-- Switch Turn On/Off -->
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/sv_main_activity_weather_switch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textOn="@string/sv_activity_main_weather_on"
+            android:textOff="@string/sv_activity_main_weather_off"
+            android:checked="false"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/cv_main_activity_led"
+            app:layout_constraintEnd_toEndOf="@+id/textView2"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@+id/textView2"
+            app:layout_constraintTop_toBottomOf="@+id/textView2"
+            app:layout_constraintVertical_bias="0.0"
+            app:useMaterialThemeColors="false" />
+
+        <!-- CONDITIONS -->
+        <TextView
+            android:id="@+id/tv_main_activity_conditions"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="8dp"
+            android:text="@string/tv_main_activity_conditions"
+            android:textColor="#3A3635"
+            android:textSize="16sp"
+            android:textStyle="normal"
+            app:layout_constraintBottom_toTopOf="@+id/gl_horizontal_25"
+            app:layout_constraintEnd_toStartOf="@+id/tv_main_activity_conditions_value"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <TextView
+            android:id="@+id/tv_main_activity_conditions_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tv_main_activity_conditions_value"
+            android:textColor="#393335"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_main_activity_conditions"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/tv_main_activity_conditions"
+            app:layout_constraintTop_toTopOf="@+id/tv_main_activity_conditions" />
+
+
+        <!-- CardView RAIN -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cv_main_activity_rain"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="36dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="12dp"
+            android:backgroundTint="#FFFFFF"
+            android:minWidth="150dp"
+            android:minHeight="130dp"
+            app:cardCornerRadius="20dp"
+            app:layout_constraintBottom_toTopOf="@+id/gl_horizontal"
+            app:layout_constraintEnd_toEndOf="@+id/gl_vertical"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/gl_horizontal_25"
+            app:layout_constraintVertical_bias="0.0"
+            app:strokeColor="#DDDDDD"
+            app:strokeWidth="1dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <!-- CV RAIN ICON -->
+                <ImageView
+                    android:id="@+id/cv_main_activity_rain_icon"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="20dp"
+                    android:contentDescription="@string/iv_main_activity_rain_icon"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0"
+                    app:srcCompat="@drawable/ic_baseline_brightness_4_24"
+                    app:tint="@color/purple_500" />
+
+                <!-- CV RAIN TITLE -->
+                <TextView
+                    android:id="@+id/cv_main_activity_rain_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/cv_main_activity_rain_title"
+                    android:textColor="#393335"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toTopOf="@+id/cv_main_activity_rain_value"
+                    app:layout_constraintStart_toStartOf="@+id/cv_main_activity_rain_value"
+                    app:layout_constraintTop_toBottomOf="@+id/cv_main_activity_rain_icon"
+                    app:layout_constraintVertical_bias="1.0"
+                    app:layout_constraintVertical_chainStyle="packed" />
+
+                <!-- CV RAIN VALUE -->
+                <TextView
+                    android:id="@+id/cv_main_activity_rain_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:text="@string/cv_main_activity_rain_value"
+                    android:textColor="#65000000"
+                    android:textSize="13sp"
+                    android:textStyle="normal"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/cv_main_activity_rain_title" />
+
+                <!--
+                    style="@style/Widget.App.Switch"
+-->
+
+                <!-- CV RAIN SWITCH -->
+                <com.google.android.material.switchmaterial.SwitchMaterial
+                    android:id="@+id/cv_main_activity_rain_switch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="20dp"
+                    android:visibility="invisible"
+
+                    android:backgroundTint="@color/purple_500"
+                    android:buttonTint="@color/black"
+                    android:checked="false"
+                    android:textOff="@string/sv_activity_main_rain_off"
+                    android:textOn="@string/sv_activity_main_rain_on"
+                    app:layout_constraintBottom_toBottomOf="parent"
+
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0"
+                    app:thumbTint="@color/purple_500"
+                    app:trackTint="@color/purple_200"
+                    app:useMaterialThemeColors="false" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- CardView LED -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cv_main_activity_led"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="36dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="12dp"
+            android:backgroundTint="#FFFFFF"
+            android:minWidth="150dp"
+            android:minHeight="130dp"
+            app:cardCornerRadius="20dp"
+            app:layout_constraintBottom_toTopOf="@+id/gl_horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/gl_vertical"
+            app:layout_constraintTop_toTopOf="@+id/gl_horizontal_25"
+            app:layout_constraintVertical_bias="0.0"
+            app:strokeColor="#DDDDDD"
+            app:strokeWidth="1dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <!-- CV LED ICON -->
+                <ImageView
+                    android:id="@+id/cv_main_activity_led_icon"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="20dp"
+                    android:contentDescription="@string/iv_main_activity_led_icon"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0"
+                    app:srcCompat="@drawable/ic_baseline_bolt_24"
+                    app:tint="@color/purple_500" />
+
+                <!-- CV LED TITLE -->
+                <TextView
+                    android:id="@+id/cv_main_activity_led_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/cv_main_activity_led_title"
+                    android:textColor="#393335"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toTopOf="@+id/cv_main_activity_led_value"
+                    app:layout_constraintStart_toStartOf="@+id/cv_main_activity_led_value"
+                    app:layout_constraintTop_toBottomOf="@+id/cv_main_activity_led_icon"
+                    app:layout_constraintVertical_bias="1.0"
+                    app:layout_constraintVertical_chainStyle="packed" />
+
+                <!-- CV LED VALUE -->
+                <TextView
+                    android:id="@+id/cv_main_activity_led_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:text="@string/cv_main_activity_led_value"
+                    android:textColor="#65000000"
+                    android:textSize="13sp"
+                    android:textStyle="normal"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/cv_main_activity_led_title" />
+
+                <!--
+                    style="@style/Widget.App.Switch"
+-->
+
+                <!-- CV LED SWITCH -->
+                <com.google.android.material.switchmaterial.SwitchMaterial
+                    android:id="@+id/cv_main_activity_led_switch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="20dp"
+                    android:visibility="invisible"
+
+                    android:backgroundTint="@color/purple_500"
+                    android:buttonTint="@color/black"
+                    android:checked="false"
+                    android:textOff="@string/sv_activity_main_led_off"
+                    android:textOn="@string/sv_activity_main_led_on"
+                    app:layout_constraintBottom_toBottomOf="parent"
+
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0"
+                    app:thumbTint="@color/purple_500"
+                    app:trackTint="@color/purple_200"
+                    app:useMaterialThemeColors="false" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- CardView Temperature -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cv_main_activity_temperature"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="24dp"
+            android:backgroundTint="#FFFFFF"
+            android:minWidth="150dp"
+            android:minHeight="130dp"
+            app:cardCornerRadius="20dp"
+            app:layout_constraintBottom_toTopOf="@+id/gl_horizontal_75"
+            app:layout_constraintEnd_toStartOf="@+id/gl_vertical"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/gl_horizontal"
+            app:layout_constraintVertical_bias="0.0"
+            app:strokeColor="#DDDDDD"
+            app:strokeWidth="1dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <!-- CV Temperature ICON -->
+                <ImageView
+                    android:id="@+id/cv_main_activity_temperature_icon"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="20dp"
+                    android:contentDescription="@string/iv_main_activity_temperature_icon"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0"
+                    app:srcCompat="@drawable/ic_baseline_device_thermostat_24"
+                    app:tint="@color/purple_500" />
+
+                <!-- CV Temperature TITLE -->
+                <TextView
+                    android:id="@+id/cv_main_activity_temperature_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/cv_main_activity_temperature_title"
+                    android:textColor="#000000"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toTopOf="@+id/cv_main_activity_temperature_value"
+                    app:layout_constraintStart_toStartOf="@+id/cv_main_activity_temperature_value"
+                    app:layout_constraintTop_toBottomOf="@+id/cv_main_activity_temperature_icon"
+                    app:layout_constraintVertical_bias="1.0"
+                    app:layout_constraintVertical_chainStyle="packed" />
+
+                <!-- CV Temperature VALUE -->
+                <TextView
+                    android:id="@+id/cv_main_activity_temperature_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:text="@string/cv_main_activity_temperature_value"
+                    android:textColor="#65000000"
+                    android:textSize="13sp"
+                    android:textStyle="normal"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/cv_main_activity_temperature_title" />
+
+                <TextView
+                    android:id="@+id/textVicv_main_activity_temperature_value_symbol"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="@string/cv_main_activity_temperature_value_symbol"
+                    android:textSize="13sp"
+                    android:textStyle="normal"
+                    app:layout_constraintBottom_toBottomOf="@+id/cv_main_activity_temperature_value"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toEndOf="@+id/cv_main_activity_temperature_value"
+                    app:layout_constraintTop_toTopOf="@+id/cv_main_activity_temperature_value" />
+
+                <!-- CV Temperature SWITCH -->
+                <com.google.android.material.switchmaterial.SwitchMaterial
+                    android:id="@+id/cv_main_activity_temperature_switch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="20dp"
+                    android:checked="true"
+                    android:visibility="invisible"
+
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+
+        <!-- CardView Humidity -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cv_main_activity_humidity"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="24dp"            android:backgroundTint="#FFFFFF"
+            android:maxWidth="200dp"
+            android:maxHeight="180dp"
+            android:minWidth="150dp"
+            android:minHeight="130dp"
+            app:cardCornerRadius="20dp"
+            app:layout_constraintBottom_toTopOf="@+id/gl_horizontal_75"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/gl_vertical"
+            app:layout_constraintTop_toBottomOf="@+id/gl_horizontal"
+            app:layout_constraintVertical_bias="0.0"
+            app:strokeColor="#DDDDDD"
+            app:strokeWidth="1dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <!-- CV Temperature ICON -->
+                <ImageView
+                    android:id="@+id/cv_main_activity_humidity_icon"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="20dp"
+                    android:contentDescription="@string/iv_main_activity_humidity_icon"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0"
+                    app:srcCompat="@drawable/ic_baseline_opacity_24"
+                    app:tint="@color/purple_500" />
+
+                <!-- CV Temperature TITLE -->
+                <TextView
+                    android:id="@+id/cv_main_activity_humidity_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/cv_main_activity_humidity_title"
+                    android:textColor="#000000"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toTopOf="@+id/cv_main_activity_humidity_value"
+                    app:layout_constraintStart_toStartOf="@+id/cv_main_activity_humidity_value"
+                    app:layout_constraintTop_toBottomOf="@+id/cv_main_activity_humidity_icon"
+                    app:layout_constraintVertical_bias="1.0"
+                    app:layout_constraintVertical_chainStyle="packed" />
+
+                <!-- CV Temperature VALUE -->
+                <TextView
+                    android:id="@+id/cv_main_activity_humidity_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:text="@string/cv_main_activity_humidity_value"
+                    android:textColor="#65000000"
+                    android:textSize="13sp"
+                    android:textStyle="normal"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/textView3"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintHorizontal_chainStyle="packed"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/cv_main_activity_humidity_title" />
+
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="@string/cv_main_activity_humidity_value_symbol"
+                    android:textSize="13sp"
+                    android:textStyle="normal"
+                    app:layout_constraintBottom_toBottomOf="@+id/cv_main_activity_humidity_value"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/cv_main_activity_humidity_value"
+                    app:layout_constraintTop_toTopOf="@+id/cv_main_activity_humidity_value" />
+
+                <!-- CV Temperature SWITCH -->
+                <com.google.android.material.switchmaterial.SwitchMaterial
+                    android:id="@+id/cv_main_activity_humidity_switch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="20dp"
+                    android:checked="true"
+                    android:visibility="invisible"
+
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Add new device -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_activity_main_add_new_device"
+            android:layout_width="0dp"
+            android:layout_height="62dp"
+
+            android:layout_marginStart="24dp"
+
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="16dp"
+            android:text="@string/btn_main_activity_api_rest"
+            android:textAllCaps="false"
+            android:textSize="16sp"
+            android:textStyle="normal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cv_main_activity_temperature"
+            app:layout_constraintVertical_bias="0.014" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="24dp"
+            android:background="@drawable/bg_add_new_device"
+            app:layout_constraintBottom_toBottomOf="@+id/textView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/gl_vertical"
+            app:layout_constraintTop_toTopOf="@+id/tv_main_activity_user_name"
+            android:src="@drawable/ic_baseline_hdr_auto_24"
+            app:tint="@color/purple_500"
+            android:contentDescription="@string/btn_main_activity_add_new_device_description"
+            />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Suscribirse"
+            android:visibility="invisible"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_activity_main_add_new_device"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintVertical_bias="0"
+            />
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Publicar"
+            android:visibility="invisible"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/button"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintVertical_bias="0"
+            />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.core.widget.NestedScrollView>

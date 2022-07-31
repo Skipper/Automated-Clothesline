@@ -1,0 +1,46 @@
+<resources>
+
+    <string name="app_name">AppTendeme</string>
+
+    <string name="tv_main_activity_hello">Hello</string>
+    <string name="tv_main_activity_user_name"></string>
+    <string name="tv_main_activity_symbol">!</string>
+    <string name="tv_main_activity_welcome">Welcome to AppTendeme</string>
+
+    <string name="iv_main_activity_weather">Weather image</string>
+    <string name="sv_main_activity_weather_title">Turn On/Off</string>
+    <string name="sv_activity_main_weather_off">OFF</string>
+    <string name="sv_activity_main_weather_on">ON</string>
+
+    <string name="tv_main_activity_conditions">Current conditions are: </string>
+    <string name="tv_main_activity_conditions_value">Starting</string>
+
+    <string name="cv_main_activity_rain_title">Rain</string>
+    <string name="cv_main_activity_rain_value">Reading devices...</string>
+    <string name="iv_main_activity_rain_icon">Rain icon</string>
+    <string name="sv_activity_main_rain_off">OFF</string>
+    <string name="sv_activity_main_rain_on">ON</string>
+
+    <string name="cv_main_activity_led_title">Light</string>
+    <string name="cv_main_activity_led_value">Reading devices...</string>
+    <string name="iv_main_activity_led_icon">Led icon</string>
+    <string name="sv_activity_main_led_off">OFF</string>
+    <string name="sv_activity_main_led_on">ON</string>
+
+    <string name="cv_main_activity_temperature_title">Temperature</string>
+    <string name="cv_main_activity_temperature_value">(Reading devices...)</string>
+    <string name="cv_main_activity_temperature_value_symbol">ºC</string>
+    <string name="iv_main_activity_temperature_icon">Temperature icon</string>
+
+    <string name="cv_main_activity_humidity_title">Humidity</string>
+    <string name="cv_main_activity_humidity_value">(Reading devices...)</string>
+    <string name="cv_main_activity_humidity_value_symbol">%</string>
+    <string name="iv_main_activity_humidity_icon">Humidity icon</string>
+
+    <string name="btn_main_activity_add_new_device">Add new device</string>
+    <string name="btn_main_activity_api_rest">Retract tender</string>
+    <string name="btn_main_activity_add_new_device_description">Button Add new device</string>
+    <string name="iv_main_activity_add_new_device_icon">Add new device icon</string>
+
+
+</resources>
