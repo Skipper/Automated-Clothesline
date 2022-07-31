@@ -37,7 +37,7 @@ class MainActivity : AppCompatActivity() {
         // Parametros de conexión a MQTT
         val serverURI   = "ssl://srv-iot.diatel.upm.es:8883"//getString(MQTT_SERVER_URI_KEY)
         val clientId    = "app"//getString(MQTT_CLIENT_ID_KEY)
-        val username    = "NgPgndrYR4pDQc7TUjOc"//getString(MQTT_USERNAME_KEY)
+        val username    = "MQTT_USERNAME_KEY"//getString(MQTT_USERNAME_KEY)
         val pwd         = ""//getString(MQTT_PWD_KEY)
 
         // Chequeamos los parametros de conexion
@@ -185,7 +185,7 @@ class MainActivity : AppCompatActivity() {
         lateinit var connection: HttpURLConnection
 
         //solicito token de acceso a la API
-        val urlParameters : String = "{\"username\":\"francisco.lupi@alumnos.upm.es\", \"password\":\"Panico12-\"}"
+        val urlParameters : String = "{\"username\":\"YOUR_USERNAME\", \"password\":\"YOUR_PASSWORD-\"}"
         var url: URL =
             URL("https://srv-iot.diatel.upm.es/api/auth/login")
         connection = url.openConnection() as HttpURLConnection
