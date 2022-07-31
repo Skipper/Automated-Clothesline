@@ -40,8 +40,8 @@ For more details, go to the specific project folder: images/readme.md
 
 <img src="images/Design.PNG" width="468" height="350" /> <img src="images/Structure.png" width="468" height="350" /> 
 
-<img src="images/Assemble.jpg" width="468" height="350" /> 
-<img src="images/Methods.png" width="468" height="125" />
+<img src="images/Assemble.jpg" width="468" height="350" /> <img src="images/Dashboard.PNG" width="468" height="350" />
+
 <img src="images/Mobile.png" width="350" height="468" /> 
 
 ## Installation
