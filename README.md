@@ -38,10 +38,12 @@ For more details, go to the specific project folder: images/readme.md
 
 ## Screenshots 
 
-<img src="images/Estructura.PNG" width="250" height="468" /> 
-<img src="images/Console.PNG" width="380" height="468" /> 
-<img src="images/Header.PNG" width="468" height="250" /> 
-<img src="images/image0.PNG" width="468" height="250" />
+<img src="images/Design.PNG" width="468" height="350" /> <img src="images/Structure.png" width="468" height="350" /> 
+
+<img src="images/Methods.png" width="468" height="125" />
+
+<img src="images/Assemble.jpg" width="468" height="350" /> 
+<img src="images/Mobile.png" width="350" height="468" /> 
 
 ## Installation
 
