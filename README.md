@@ -2,11 +2,11 @@
 
 Project developed with **Raspberry Pi 3** in **C, C++** programming language with **I2C** communication protocol for sensor control and data collection projected on LCD screen.
 
-Application developed in Android Studio with **Kotlin** programming language and **REST API,** implementing Material Design standards; that allows the user to manage the information from the sensors that is stored in an **IoT ThingsBoard platform.**
+Application developed in Android Studio with programming language **Kotlin** and **REST API**, implementing Material Design standards; that allows the user to manage the information from the sensors that is stored in a **ThingsBoard IoT platform.**
 
-The solution is made up of a series of sensors/actuators connected to a **Raspberry Pi,** which collect data from the environment in which the clothesline itself is located. The collection of that data is sent for **EDGE** processing in **Thingsboard,** and the processing of that data determines what actions the actuators on the clothesline will take. In addition, a Mobile Application is implemented through which the user can view the conditions of the clothesline in real time, as well as execute actions on their own.
+The solution is made up of a series of sensors/actuators connected to a **Raspberry Pi**, which collect data from the environment in which the clothesline is located. The collection of that data is sent for **EDGE** processing in **Thingsboard**, which determines what actions the actuators will take on the clothesline. In addition, a Mobile Application is implemented through which the user can view the conditions of the clothesline in real time, as well as execute actions on their own.
 
-Connects via **MQTT** to send data and via **REST API** to receive data from **Thingsboard.**
+It connects via **MQTT** to send data and via **REST API** to receive data from **Thingsboard.**
 
 Devices used:
 
